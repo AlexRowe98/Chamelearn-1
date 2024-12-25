@@ -13,7 +13,7 @@ export function middleware(request: NextRequest) {
   // Check if the user is not authenticated and is not already on public pages
   if (!isAuthenticated && !publicPaths.some((path) => request.url.includes(path))) {
     return NextResponse.redirect(new URL('/login', request.url))
-  }
+  } 
 
   // Allow the request to proceed if authenticated or on public paths
   return NextResponse.next()
